@@ -8,8 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
+
+import java.util.ArrayList;
 
 import id.ac.ub.filkom.se.kcv.astechlauncher.R;
 
@@ -31,7 +34,10 @@ public class Prediksi extends Fragment
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    String[] SPINNERLIST = {"Dolar-US", "Ringgit-Malaysia", "Yen-Japan", "Yuan-China","Euro-Eropa"};
+    String[] mata_uang = {"Dolar-US", "Ringgit-Malaysia", "Yen-Japan", "Yuan-China","Euro-Eropa"};
+    String[] range_hari = {"1 hari (hari ini)", "2 hari", "3 hari", "4 hari","5 hari","6 hari","7 hari"};
+    String[] listArray = {"Android ListView Example","ListVIew Android","Simple Android ListView","ListView in Android","Android ListView Example","ListVIew Android","Simple Android ListView","ListView in Android","Android ListView Example","ListVIew Android","Simple Android ListView","ListView in Android"};
+
     private OnFragmentInteractionListener mListener;
 
     public Prediksi()
@@ -75,12 +81,30 @@ public class Prediksi extends Fragment
     {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.mainapp_activity_main_fragment_prediksi, container, false);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line, SPINNERLIST);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this.getActivity(),R.layout.textview_spinner_setting, mata_uang);
 
         MaterialBetterSpinner materialDesignSpinner = (MaterialBetterSpinner) view.findViewById(R.id.spinner_mata_uang);
         materialDesignSpinner.setAdapter(arrayAdapter);
 
+        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(this.getActivity(),R.layout.textview_spinner_setting, range_hari);
+
+        MaterialBetterSpinner materialDesignSpinner2 = (MaterialBetterSpinner) view.findViewById(R.id.spinner_range_hari);
+        materialDesignSpinner2.setAdapter(arrayAdapter2);
+
+        MyAdapter adapter = new MyAdapter(this.getContext(), addData());
+        ListView listView = (ListView) view.findViewById(R.id.list);
+        listView.setAdapter(adapter);
+
         return view;
+    }
+
+    public ArrayList<Item> addData(){
+        ArrayList<Item> items = new ArrayList<Item>();
+        items.add(new Item("1","15-10-2016","Rp. 13.590"));
+        items.add(new Item("2","15-10-2016","Rp. 13.590"));
+        items.add(new Item("3","15-10-2016","Rp. 13.590"));
+
+        return items;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
