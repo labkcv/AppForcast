@@ -18,7 +18,7 @@
     <color name="shadow">#CABBBBBB</color>
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="amber">#FFC107</color>
+    <color name="amber">#ffc107</color>
     <color name="abu">#eaeaea</color>
 
 </resources>

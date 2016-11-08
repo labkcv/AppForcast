@@ -7,8 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
@@ -24,7 +26,7 @@ import id.ac.ub.filkom.se.kcv.astechlauncher.R;
  * Use the {@link Prediksi#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Prediksi extends Fragment
+public class Prediksi extends Fragment implements AdapterView.OnItemSelectedListener
 {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -92,14 +94,17 @@ public class Prediksi extends Fragment
         materialDesignSpinner2.setAdapter(arrayAdapter2);
 
         MyAdapter adapter = new MyAdapter(this.getContext(), addData());
-        ListView listView = (ListView) view.findViewById(R.id.list);
+        ListView listView = (ListView) view.findViewById(R.id.listview);
         listView.setAdapter(adapter);
 
         return view;
     }
 
+
+
     public ArrayList<Item> addData(){
         ArrayList<Item> items = new ArrayList<Item>();
+        items.add(new Item("No","Tanggal","Nilai tukar"));
         items.add(new Item("1","15-10-2016","Rp. 13.590"));
         items.add(new Item("2","15-10-2016","Rp. 13.590"));
         items.add(new Item("3","15-10-2016","Rp. 13.590"));
@@ -136,6 +141,19 @@ public class Prediksi extends Fragment
     {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String item = parent.getItemAtPosition(position).toString();
+
+        // Showing selected spinner item
+        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     /**
