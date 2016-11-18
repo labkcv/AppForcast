@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.mainapp.MainActivity">
+    tools:context=".controller.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/mainapp_activity_main_toolbar"

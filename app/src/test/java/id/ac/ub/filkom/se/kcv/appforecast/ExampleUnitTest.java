@@ -1,4 +1,4 @@
-package id.ac.ub.filkom.se.kcv.astechlauncher;
+package id.ac.ub.filkom.se.kcv.appforecast;
 
 import org.junit.Test;
 

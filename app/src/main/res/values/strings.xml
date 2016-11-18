@@ -34,4 +34,26 @@
     <string name="appforcast_saham_short_description">AppForcast holding help you to always update the holding price today, run the application and get useful information for your holding.</string>
     <string name="appforcast_prediksi_short_description">AppForcast predictions helps you to predict the value of the rupiah against foreign currencies. Run the application and get the information accurately</string>
     <string name="appforcast_minyak_short_description">AppForcast oil helps you to always control the price of oil, run the application and get the information.</string>
+
+    <string-array name="mata_uang">
+        <item>Rp-Indonesia</item>
+        <item>Dolar-US</item>
+        <item>Ringgit-Malaysia</item>
+        <item>Yen-China</item>
+        <item>Rupe-India</item>
+        <item>Yen-Japan</item>
+        <item>Euro-Eropa</item>
+    </string-array>
+
+    <string-array name="range_hari">
+        <item>1 Hari (besok)</item>
+        <item>2 Hari</item>
+        <item>3 Hari</item>
+        <item>4 Hari</item>
+        <item>5 Hari</item>
+        <item>6 Hari</item>
+        <item>7 Hari</item>
+    </string-array>
+
+
 </resources>
