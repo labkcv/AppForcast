@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<ScrollView android:id="@+id/scrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -20,7 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Data kurs"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/black"/>
 
             <!--/>-->
@@ -36,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Tanggal awal"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColorHint="@color/cardview_dark_background"
                 android:textColor="@color/black"
                 android:inputType="textCapWords"/>
@@ -54,12 +58,14 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:hint="Tanggal akhir"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColorHint="@color/cardview_dark_background"
                 android:inputType="textCapWords"/>
+
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/buttonLihatInfo"
+            android:id="@+id/buttonLihatKurs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -75,13 +81,45 @@
         android:layout_height="match_parent"
         android:background="@drawable/shadow"
         android:orientation="vertical"
+        android:padding="20dp"
         >
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/mainpage_viewpager_chart_linechart"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/Hasil_pencarian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hasil pencarian"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                />
+            <Button
+                android:id="@+id/cek_chart"
+                android:background="@color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lihat chart"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textStyle="italic"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/primary_dark"
+                />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listview_hasil_kurs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </ListView>
+
 
     </LinearLayout>
 
     </LinearLayout>
+</ScrollView>

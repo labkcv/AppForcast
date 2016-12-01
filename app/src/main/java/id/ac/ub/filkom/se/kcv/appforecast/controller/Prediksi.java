@@ -1,19 +1,17 @@
 package id.ac.ub.filkom.se.kcv.appforecast.controller;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -130,10 +128,11 @@ public class Prediksi extends Fragment implements AdapterView.OnItemSelectedList
 //        range_hari = (Spinner) view.findViewById(R.id.spinner_range_hari);
 //        range_hari.setOnItemSelectedListener(new ItemSelectedListener());
 
-
-        MyAdapter myadapter = new MyAdapter(this.getContext(), addData());
+        ArrayList<Kurs> data = addData();
+        MyAdapter myadapter = new MyAdapter(this.getContext(), data);
         ListView listView = (ListView) view.findViewById(R.id.listview);
         listView.setAdapter(myadapter);
+        listView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (data.size()*100)));
 
         return view;
     }
@@ -161,13 +160,15 @@ public class Prediksi extends Fragment implements AdapterView.OnItemSelectedList
 
     }
 
-    public ArrayList<Item> addData(){
-        ArrayList<Item> items = new ArrayList<Item>();
-        items.add(new Item("No","Tanggal","Nilai tukar"));
-        items.add(new Item("1","15-10-2016","Rp. 13.590"));
-        items.add(new Item("2","15-10-2016","Rp. 13.590"));
-        items.add(new Item("3","15-10-2016","Rp. 13.590"));
-
+    public ArrayList<Kurs> addData(){
+        ArrayList<Kurs> items = new ArrayList<Kurs>();
+        items.add(new Kurs("No","Tanggal","Nilai tukar"));
+        items.add(new Kurs("1","15-10-2016","Rp. 13.590"));
+        items.add(new Kurs("2","15-10-2016","Rp. 13.590"));
+        items.add(new Kurs("3","15-10-2016","Rp. 13.590"));
+        items.add(new Kurs("4","15-10-2016","Rp. 13.590"));
+        items.add(new Kurs("5","15-10-2016","Rp. 13.590"));
+        items.add(new Kurs("6","15-10-2016","Rp. 13.590"));
         return items;
     }
 

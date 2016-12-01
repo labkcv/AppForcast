@@ -15,11 +15,11 @@ import id.ac.ub.filkom.se.kcv.appforecast.R;
  * Created by selab on 04-Nov-16.
  */
 
-public class MyAdapter extends ArrayAdapter<Item> {
+public class MyAdapter extends ArrayAdapter<Kurs> {
     private final Context context;
-    private final ArrayList<Item> itemsArrayList;
+    private final ArrayList<Kurs> itemsArrayList;
 
-    public MyAdapter(Context context, ArrayList<Item> itemsArrayList) {
+    public MyAdapter(Context context, ArrayList<Kurs> itemsArrayList) {
 
         super(context, R.layout.row, itemsArrayList);
 

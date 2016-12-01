@@ -5,10 +5,13 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
@@ -25,13 +28,9 @@ public class MainActivity extends AppCompatActivity implements Home.OnFragmentIn
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mainapp_activity_main);
+        setContentView(R.layout.appforecast_activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.mainapp_activity_main_toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setLogo(R.drawable.prediksi);
-        toolbar.setLogoDescription("AppForecast");
-        toolbar.setTitle("AppForecast");
+        setToolbar();
 
 
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
@@ -48,6 +47,30 @@ public class MainActivity extends AppCompatActivity implements Home.OnFragmentIn
         viewPagerTab.setViewPager(viewPager);
 
 
+    }
+
+    private void setToolbar()
+    {
+
+        final Toolbar toolbar = (Toolbar) super.findViewById(R.id.appforecast_activity_main_toolbar);
+        super.setSupportActionBar(toolbar);
+        final ActionBar actionBar = super.getSupportActionBar();
+        if(actionBar != null)
+        {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setDisplayShowTitleEnabled(false);
+            toolbar.setContentInsetStartWithNavigation(4);
+
+            toolbar.setNavigationOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    MainActivity.this.onBackPressed();
+                }
+            });
+        }
     }
 
     @Override

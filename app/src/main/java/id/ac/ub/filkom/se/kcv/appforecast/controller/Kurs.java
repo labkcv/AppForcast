@@ -1,13 +1,13 @@
-package id.ac.ub.filkom.se.kcv.astechlauncher.controller.mainapp;
+package id.ac.ub.filkom.se.kcv.appforecast.controller;
 
 /**
  * Created by selab on 04-Nov-16.
  */
 
-public class Item {
+public class Kurs {
     private String no,hari,hasil;
 
-    public Item(String no, String hari, String hasil) {
+    public Kurs(String no, String hari, String hasil) {
         super();
         this.no = no;
         this.hari = hari;
