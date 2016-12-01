@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AppForcast1.iml" filepath="$PROJECT_DIR$/AppForcast1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MPAndroidChart/MPChartLib/chart.iml" filepath="$PROJECT_DIR$/../MPAndroidChart/MPChartLib/chart.iml" />
     </modules>
   </component>
 </project>
